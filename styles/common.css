@@ -1,0 +1,38 @@
+
+head,body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.text-google-red {
+    color: #db3236;
+}
+
+.bg-google-red {
+    background: #db3236;
+}
+
+.text-google-blue {
+    color: #4885ed;
+}
+
+.bg-google-blue {
+    background: #4885ed;
+}
+
+.text-google-green {
+    color: #3cba54;
+}
+
+.bg-google-green {
+    background: #3cba54;
+}
+
+.text-google-yellow {
+    color: #f4c20d;
+}
+
+.bg-google-yellow {
+    background: #f4c20d;
+}
