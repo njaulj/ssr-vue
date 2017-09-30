@@ -1,8 +1,15 @@
-
 head,body {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     padding: 0 0;
     margin: 0 0;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
 }
 
 .text-google-red {

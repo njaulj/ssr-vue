@@ -7,12 +7,12 @@ const NODE_ENV = process.env["NODE_ENV"] ? process.env["NODE_ENV"] : 'dev'
 var env = {
     dev: {
         entry: {
-            index: ['./modules/index/index.js']
+            index: './modules/index/index.js'
         },
         output: {
             filename: '[name].bundle.js',
             publicPath: '/static/',
-            path: path.resolve(__dirname, './dist')
+            path: path.resolve(__dirname, 'dist')
         },
         devtool: 'inline-source-map',
         plugins: [
@@ -89,7 +89,8 @@ var env = {
             alias: {
                 vue: 'vue/dist/vue.min.js',
                 jquery: 'jquery/dist/jquery.min.js'                            
-            }
+            },
+            extensions: ['.vue', '.js', '.css']
         }
     }
 }
