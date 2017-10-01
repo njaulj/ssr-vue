@@ -17,6 +17,7 @@ export default {
 <style scoped>
 .pd-header {
   box-shadow: 1px 1px 1px #f2f2f2;
+  background: url(../assets/avatar.png)
 }
 
 .fluid {

@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const FastUglifyJsPlugin = require('fast-uglifyjs-plugin')
 
 const NODE_ENV = process.env["NODE_ENV"] ? process.env["NODE_ENV"] : 'dev'
 
@@ -39,7 +40,7 @@ var env = {
                         {
                             loader: 'url-loader',
                             options: {
-                              limit: 8192
+                              limit: 8
                             }
                         }
                     ]
@@ -50,19 +51,35 @@ var env = {
             alias: {
                 vue: 'vue/dist/vue.min.js',
                 jquery: 'jquery/dist/jquery.min.js'                
-            }
+            },
+            extensions: ['.vue', '.js', '.css']            
         }
     },
     test: {
 
     },
     pro: {
-        entry: ['./index.js'],
+        entry: {
+            index: './modules/index/index.js'
+        },
         output: {
-            filename: 'index.bundle.js'
+            filename: '[name].bundle.js',
+            publicPath: '/static/',
+            path: path.resolve(__dirname, 'dist')
         },
         plugins: [
-            new CleanWebpackPlugin(['index.bundle.js'])
+            new CleanWebpackPlugin(['index.bundle.js']),
+            new FastUglifyJsPlugin({
+                compress: {
+                    warnings: false
+                },
+                // debug设为true可输出详细缓存使用信息:
+                debug: true,
+                // 默认开启缓存，提高uglify效率，关闭请使用:
+                cache: false,
+                // 工作进程数，默认os.cpus().length
+                workerNum: 2
+            })
         ],
         module: {
             rules: [
