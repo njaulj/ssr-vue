@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import $ from 'jquery'
-import pdHeader from '../../components/pd-header.vue'
+import pdHeader from '../../Components/components/pd-header.vue'
 import '../../styles/common.css'
 
 new Vue({
